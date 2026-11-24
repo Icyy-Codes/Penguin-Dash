@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bi4bb6himxl64"]
+
+[ext_resource type="Script" uid="uid://yo82v7chmmy7" path="res://main_menu.gd" id="1_gtid3"]
+[ext_resource type="Texture2D" uid="uid://cfltc2l2hij8a" path="res://Background/far layer.png" id="1_wugcc"]
+[ext_resource type="Texture2D" uid="uid://w6oc8mfbttf0" path="res://penguin/idleeee3.png" id="2_gtid3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnfjo"]
+atlas = ExtResource("2_gtid3")
+region = Rect2(1980, 0, 330, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_257up"]
+atlas = ExtResource("2_gtid3")
+region = Rect2(2310, 0, 330, 311)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ga2m"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_dnfjo")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_257up")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_ynqcv"]
+
+[node name="Control" type="Control" unique_id=1931149004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtid3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1581587316]
+layout_mode = 0
+offset_right = 4998.0
+offset_bottom = 1504.0
+texture = ExtResource("1_wugcc")
+
+[node name="Penguin" type="AnimatedSprite2D" parent="." unique_id=1925171617]
+position = Vector2(2506, 731)
+scale = Vector2(0.9257573, 0.89951766)
+sprite_frames = SubResource("SpriteFrames_3ga2m")
+animation = &"idle"
+
+[node name="Label" type="Label" parent="." unique_id=1637122694]
+modulate = Color(0.0011741425, 9.461669e-05, 0.0012604409, 1)
+self_modulate = Color(0.11523227, 0.11523227, 0.11523227, 1)
+layout_mode = 0
+offset_left = 1913.0
+offset_top = 218.0
+offset_right = 3145.0
+offset_bottom = 472.0
+theme = SubResource("Theme_ynqcv")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 186
+text = "Penguin Dash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=1995481550]
+custom_minimum_size = Vector2(500, 160)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -511.0
+offset_right = 257.0
+offset_bottom = -351.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 77
+text = "Play"
+
+[node name="Instruction" type="Label" parent="." unique_id=615678752]
+layout_mode = 0
+offset_left = 2235.0
+offset_top = 1152.0
+offset_right = 2794.0
+offset_bottom = 1289.0
+theme_override_colors/font_color = Color(0.00054253906, 0.00047945307, 0.0003658984, 1)
+theme_override_font_sizes/font_size = 100
+text = "Slide with R"

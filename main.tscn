@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://1n4pei6bssgs"]
+
+[ext_resource type="PackedScene" uid="uid://by2e5jmbjpye7" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dvdbsm4qbvhor" path="res://ground1.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bjfgkoxf24r4k" path="res://ground_spawn.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bstddxlu87xpi" path="res://Background/6b1cd7af-9fe2-4a30-b487-1063acb9209e.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c0dsol3adx124" path="res://Background/middle layer.png" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dslrnffjwarms" path="res://game_over.gd" id="6_7mycd"]
+
+[node name="Main" type="Node2D" unique_id=1160021831]
+
+[node name="CharacterBody2D" parent="." unique_id=1492276253 instance=ExtResource("1_ig7tw")]
+position = Vector2(-11.0000305, 162)
+scale = Vector2(0.44000173, 0.4400003)
+
+[node name="Ground1" parent="." unique_id=969048294 instance=ExtResource("2_0xm2m")]
+
+[node name="GroundSpawn" type="Node2D" parent="." unique_id=2136044549 node_paths=PackedStringArray("player")]
+script = ExtResource("3_h2yge")
+chunk_s = ExtResource("2_0xm2m")
+player = NodePath("../CharacterBody2D")
+
+[node name="Far Background" type="Parallax2D" parent="." unique_id=1630229165]
+scroll_scale = Vector2(0.2, 0.05)
+scroll_offset = Vector2(-307, -62)
+repeat_size = Vector2(2900, 0)
+repeat_times = 1440
+
+[node name="Sprite2D" type="Sprite2D" parent="Far Background" unique_id=1691663048]
+z_index = -10
+position = Vector2(-1352, 37)
+scale = Vector2(1.3370167, 1.6464092)
+texture = ExtResource("4_1bvp3")
+centered = false
+
+[node name="Mid Background" type="Parallax2D" parent="." unique_id=1163674743]
+scroll_scale = Vector2(0.5, 0.1)
+scroll_offset = Vector2(-307, -62)
+repeat_size = Vector2(1800, 0)
+repeat_times = 1440
+
+[node name="Sprite2D" type="Sprite2D" parent="Mid Background" unique_id=1296101214]
+z_index = -9
+position = Vector2(-1104, -101)
+scale = Vector2(1.3370167, 2.2303998)
+texture = ExtResource("5_lquwl")
+centered = false
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=1724431307 node_paths=PackedStringArray("player")]
+script = ExtResource("6_7mycd")
+player = NodePath("../CharacterBody2D")
+
+[node name="Label" type="Label" parent="GameOver" unique_id=763984583]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 427.0
+offset_right = 414.0
+offset_bottom = 632.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+
+[node name="PlayAgain" type="Button" parent="GameOver" unique_id=876243687]
+custom_minimum_size = Vector2(500, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -80.0
+offset_right = 250.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="GameOver" unique_id=632373690]
+custom_minimum_size = Vector2(500, 160)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -625.0
+offset_right = 250.0
+offset_bottom = -465.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Main Menu"

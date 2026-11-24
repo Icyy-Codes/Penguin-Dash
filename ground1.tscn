@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dvdbsm4qbvhor"]
+
+[ext_resource type="Texture2D" uid="uid://v0osu4eylo2b" path="res://Grounds/Continue_ground_terrain_layer_se…_a24bb73f.png" id="1_tojuk"]
+[ext_resource type="Texture2D" uid="uid://tekdtx04f0y5" path="res://Grounds/95cdbb79-8f23-41aa-b560-972591ef93ad.png_b53068e4.png" id="2_8ygot"]
+[ext_resource type="Texture2D" uid="uid://5joh52yo4yn1" path="res://Grounds/447ea505-18c3-48c2-9a3f-5d3925289d2d.png_abb12478.png" id="3_mfh17"]
+[ext_resource type="Texture2D" uid="uid://ink2f8fgg5ku" path="res://Grounds/d3d724eb-d97f-4744-8ef2-b4bf60ae41fe.png_4c459b07.png" id="4_bydep"]
+[ext_resource type="Texture2D" uid="uid://dcxllilgqrsih" path="res://Grounds/Ground_terrain_layer_hill_jump_5f885463.png" id="5_8qbi8"]
+[ext_resource type="Texture2D" uid="uid://dasmrhldmg2s1" path="res://Grounds/Connect_ground_terrain_layers_9fd24c63.png" id="6_pbagp"]
+
+[node name="Ground1" type="Node2D" unique_id=969048294]
+
+[node name="Image1" type="Sprite2D" parent="." unique_id=1365541800]
+position = Vector2(-687, -318)
+texture = ExtResource("1_tojuk")
+centered = false
+
+[node name="Image2" type="Sprite2D" parent="." unique_id=1045683306]
+position = Vector2(688, -349)
+texture = ExtResource("2_8ygot")
+centered = false
+
+[node name="Image3" type="Sprite2D" parent="." unique_id=2030751303]
+position = Vector2(2063, -349)
+texture = ExtResource("2_8ygot")
+centered = false
+flip_h = true
+
+[node name="Image4" type="Sprite2D" parent="." unique_id=1776000950]
+position = Vector2(3439, -384)
+texture = ExtResource("3_mfh17")
+centered = false
+
+[node name="Image5" type="Sprite2D" parent="." unique_id=1292936079]
+position = Vector2(4814, -533)
+texture = ExtResource("1_tojuk")
+centered = false
+
+[node name="Image6" type="Sprite2D" parent="." unique_id=1301857262]
+position = Vector2(6157, -409)
+texture = ExtResource("4_bydep")
+centered = false
+flip_h = true
+
+[node name="Image7" type="Sprite2D" parent="." unique_id=1550606988]
+position = Vector2(7509, -430)
+texture = ExtResource("5_8qbi8")
+centered = false
+
+[node name="Image8" type="Sprite2D" parent="." unique_id=942125210]
+position = Vector2(9458, -125)
+texture = ExtResource("4_bydep")
+
+[node name="Image9" type="Sprite2D" parent="." unique_id=1005744878]
+position = Vector2(10137, -550)
+texture = ExtResource("6_pbagp")
+centered = false
+
+[node name="Image10" type="Sprite2D" parent="." unique_id=645072169]
+position = Vector2(11505, -427)
+texture = ExtResource("4_bydep")
+centered = false
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=992373486]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1278283449]
+polygon = PackedVector2Array(-687, 230, -687, 321, 688, 320, 686, 293, 3435, 293, 4811, 260, 4826, 99, 6159, 111, 6158, 235, 8439, 243, 8469, -223, 8423, -255, 8292, -244, 8259, -232, 7711, 138, 7641, 166, 7588, 181, 7553, 181, 7004, 183, 6964, 182, 6891, 174, 6813, 162, 6757, 151, 6719, 141, 6649, 119, 6582, 95, 6400, 21, 6372, 15, 4629, 16, 4613, 18, 4587, 28, 4413, 119, 4367, 145, 4278, 187, 4236, 200, 4209, 204, 4181, 202, 4154, 195, 4127, 185, 4017, 119, 3973, 103, 3945, 97, 3914, 98, 3883, 104, 3861, 115, 3821, 143, 3781, 173, 3757, 190, 3714, 212, 3680, 223, 3646, 229, 3073, 231, 3046, 227, 3010, 221, 2863, 180, 2851, 177, 2840, 183, 2820, 202, 2531, 202, 2507, 197, 2436, 165, 2382, 136, 2259, 64, 2235, 55, 1891, 56, 1873, 61, 1814, 95, 1758, 130, 1719, 151, 1687, 168, 1620, 197, 1597, 202, 1305, 201, 1282, 179, 1270, 176, 1125, 218, 1085, 227, 1061, 230)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1443833251]
+polygon = PackedVector2Array(8769, 145, 8771, 196, 12880, 220, 12881, 163, 12364, 165, 12289, 162, 12224, 154, 12149, 142, 12080, 128, 12006, 104, 11962, 89, 11786, 16, 11730, -3, 10993, -3, 10977, -11, 10957, -41, 10961, -177, 10968, -195, 10970, -269, 10974, -276, 10984, -376, 10964, -398, 10853, -398, 10818, -392, 10791, -382, 10519, -199, 10353, -88, 10320, -68, 10271, -43, 10218, -28, 10183, -24, 9932, -25, 9900, -16, 9705, 62, 9613, 95, 9535, 116, 9379, 140, 9303, 146)
+
+[node name="End" type="Marker2D" parent="." unique_id=1677429274]
+position = Vector2(14173, -318)
